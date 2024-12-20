@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-class Employee
+class Details
 {
 protected:
     int id;
@@ -18,7 +18,7 @@ public:
         cin >> salary;
     }
 };
-class Details : public Employee
+class Employee : public Details
 {
 public:
     void show()
@@ -30,7 +30,7 @@ public:
 };
 int main()
 {
-    Details E1;
+    Employee E1;
     E1.input();
     E1.show();
 
