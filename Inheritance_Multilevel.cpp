@@ -1,17 +1,17 @@
 #include <iostream>
 using namespace std;
-class Enter
+// We are going to use Multi-level Inheritance in our program
+class A
 {
 public:
     float a, b;
-    virtual void input()
+    void input()
     {
-
         cout << "Enter two values: ";
         cin >> a >> b;
     }
 };
-class Add : public virtual Enter
+class Add : public A                // Inherit class Add with class A
 {
 public:
     void sum()
@@ -19,7 +19,7 @@ public:
         cout << "Sum is: " << a + b << endl;
     }
 };
-class Sub : public Add
+class Sub : public Add              // Inherit class Sub with class Add
 {
 public:
     void sub()
@@ -27,7 +27,7 @@ public:
         cout << "Substraction is: " << a - b << endl;
     }
 };
-class Mul : public Sub
+class Mul : public Sub              // Inherit class Mul with class Sub
 {
 public:
     void multiply()
@@ -35,7 +35,7 @@ public:
         cout << "Multiplication is: " << a * b << endl;
     }
 };
-class Division : public Mul
+class Div : public Mul              // Inherit class Div with class Mul
 {
 public:
     void division()
@@ -45,11 +45,11 @@ public:
 };
 int main()
 {
-    Division obj;
+    Div obj;
     obj.input();
     obj.sum();
     obj.sub();
     obj.multiply();
     obj.division();
     return 0;
-}   
+}
